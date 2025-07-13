@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mosab Final</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #121212;
+            color: white;
+        }
+        .rate-box {
+            display: inline-block;
+            padding: 20px 40px;
+            font-size: 2em;
+            font-weight: bold;
+            border-radius: 12px;
+            background-color: gray;
+        }
+        .green { background-color: #2ecc71; }
+        .red { background-color: #e74c3c; }
+    </style>
+</head>
+<body>
+    <h1>ربات Mosab</h1>
+    <div id="rate" class="rate-box">در حال دریافت ضریب...</div>
+
+    <script>
+        // شبیه‌سازی دریافت ضریب از سرور
+        setInterval(() => {
+            const rate = (Math.random() * 5).toFixed(2);
+            const rateBox = document.getElementById("rate");
+            rateBox.innerText = rate + "x";
+            if (rate >= 2) {
+                rateBox.className = "rate-box green";
+            } else {
+                rateBox.className = "rate-box red";
+            }
+        }, 2000);
+    </script>
+</body>
+</html>
